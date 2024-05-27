@@ -42,7 +42,7 @@ export const announcementsRoute = new Hono()
     const id = Number.parseInt(c.req.param('id'))
     const user = c.var.user
 
-    const announcement = await db.delete(announcementTable).where(and(eq(announcementTable.userId, user.id), eq(announcementTable.id, id))).returning().then(res => res[0])
+    const announcement = await db.delete(announcementTable).where(eq(announcementTable.id, id)).returning().then(res => res[0])
 
     if (!announcement) {
       return c.notFound()

@@ -71,7 +71,7 @@ export const getStaff = createMiddleware<Env>(async (c, next) => {
     const role = (await kindeClient.getPermissions(sessionManager(c))).permissions;
     const roleQ = role[0];
 
-    if (!isAuthenticated && roleQ !== "staff-perm") {
+    if (!isAuthenticated && roleQ !== "straff-perm") {
       return c.json({ error: "Unauthorized" }, { status: 401 });
     } else {
       const user = await kindeClient.getUserProfile(sessionManager(c));
