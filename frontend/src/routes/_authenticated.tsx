@@ -9,7 +9,7 @@ const Login = () => {
     <div className="mx-auto w-full max-w-md space-y-8">
       <div>
         <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-50">Welcome to HackUMB</h2>
-        <p className="mt-2 text-center text-sm text-gray-400">Please log in or sign up to be part of our next hackathon!</p>
+        <p className="mt-2 text-center text-sm text-white">Please log in or sign up to be part of our next hackathon!</p>
       </div>
       <div className="space-y-4">
         <Button
