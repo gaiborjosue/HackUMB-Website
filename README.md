@@ -37,14 +37,14 @@ cd HackUMB-Website
 
 Create a `.env` file in the root directory and add the following variables:
 
-\```env
+```env
 DATABASE_URL=your_postgresql_database_url
 KINDE_DOMAIN=your_kinde_domain
 KINDE_CLIENT_ID=your_kinde_client_id
 KINDE_CLIENT_SECRET=your_kinde_client_secret
 KINDE_REDIRECT_URI=your_redirect_uri
 KINDE_LOGOUT_REDIRECT_URI=your_logout_redirect_uri
-\```
+```
 
 ### Install Bun
 
@@ -54,34 +54,34 @@ Bun is a fast all-in-one JavaScript runtime. You can install Bun by following th
 
 For both the backend and frontend:
 
-\```sh
+```sh
 bun install
-\```
+```
 
 ### Run the migrations
 
 Before starting the server, you need to run the database migrations in case you have a database setup or updated the schemas.
 
 On /:
-\```sh
+```sh
 bunx drizzle-kit generate
 bun migrate.ts
 bunx drizzle-kit studio
-\```
+```
 
 ### Start the development server
 
 For both the backend and frontend you can run the same command:
 
 For /frontend:
-\```sh
+```sh
 bun dev
-\```
+```
 
 For /:
-\```sh
+```sh
 bun dev
-\```
+```
 
 ### Access the application
 
