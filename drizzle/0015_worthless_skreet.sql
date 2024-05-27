@@ -1,1 +1,0 @@
-DROP INDEX IF EXISTS "announcement_idx";

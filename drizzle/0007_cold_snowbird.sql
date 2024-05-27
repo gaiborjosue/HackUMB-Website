@@ -1,1 +1,0 @@
-ALTER TABLE "announcements" ALTER COLUMN "post_to_discord" SET NOT NULL;
