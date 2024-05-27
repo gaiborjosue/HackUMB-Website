@@ -7,6 +7,8 @@ import { db } from "../db"
 import { announcements as announcementTable } from "../db/schema/announcements"
 import { eq, desc, and } from "drizzle-orm";
 
+import { EmbedBuilder, WebhookClient } from 'discord.js'
+
 const announcementSchema = z.object({
   title: z.string().min(3).max(100),
   description: z.string(),
@@ -27,10 +29,26 @@ export const announcementsRoute = new Hono()
     const announcement = await c.req.valid("json")
     const user = c.var.user
 
+    // Post to discord webhook
+    const webhook = new WebhookClient({
+      url: process.env.DISCORD_WEBHOOK_URL!,
+    });
+
+    const embed = new EmbedBuilder()
+      .setTitle(announcement.title)
+      .setDescription(announcement.description)
+      .setColor(0x4B82FF)
+      .setTimestamp();
+
+    const webhook_message = await webhook.send({
+      content: `New announcement from ${user.given_name} 📢 - View all announcements at https://hackathon-website.fly.dev/announcements`,
+      avatarURL: user.picture!,
+      embeds: [embed],
+    });
 
     const result = await db.insert(announcementTable).values({
       ...announcement,
-      userId: user.id,
+      userId: webhook_message.id,
     }).returning()
     .then((res) => res[0])
 
@@ -46,6 +64,16 @@ export const announcementsRoute = new Hono()
 
     if (!announcement) {
       return c.notFound()
+    }
+
+    try {
+      const webhook = new WebhookClient({
+        url: process.env.DISCORD_WEBHOOK_URL!,
+      });
+
+      await webhook.deleteMessage(announcement.userId)
+    } catch (e) {
+      console.error("Failed to delete from discord")
     }
 
     return c.json({ announcement: announcement })

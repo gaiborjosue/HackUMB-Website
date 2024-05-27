@@ -15,7 +15,7 @@ Access the live website [here](https://hackathon-website.fly.dev).
 - Drizzle ORM for all interactions with a SQL Database
 - Clean, modern UI using tailwind & shadcn-ui
 - Badge generation with personalized information using three.js and webgl. See [Vercel Tutorial](https://vercel.com/blog/building-an-interactive-3d-event-badge-with-react-three-fiber) for more info.
-- Staff announcements feed
+- Announcements feed connected with discord webhook to also send announcements to the discord server. Also allows for parallel deletion of announcements in the website and discord.
 - Role-based access control for creating announcements
 - Carousel for showcasing images and information about the event
 - Responsive design with a dark mode
