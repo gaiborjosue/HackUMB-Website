@@ -2,7 +2,7 @@
 
 # FullStack App: Hack UMB - Hackathon Website
 
-Welcome to the Hack UMB project! This repository contains the code for our hackathon website :) This will improve the workflow for staff and allow us to have a cutom way of sharing information with registered participants.
+Welcome to the Hack UMB project! This repository contains the code for our hackathon website. :) This will improve staff workflow and allow us to share information with registered participants in a custom way.
 
 ## Features
 
