@@ -28,10 +28,10 @@ Welcome to the Hack UMB project! This repository contains the code for our hacka
 
 ### Clone the repository
 
-\```sh
+```sh
 git clone https://github.com/gaiborjosue/HackUMB-Website.git
 cd HackUMB-Website
-\```
+```
 
 ### Set up the environment variables
 
@@ -124,3 +124,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Contact
 
 For questions or support, please contact the project maintainers at [edward.gaibor001@umb.edu] or open an issue :)
+
+## Credits
+
+I did this project to experiment with new technologies and learn how to build a full stack application. Thus, I strongly give credit to [Sam Meech-Ward](https://www.youtube.com/@SamMeechWard) for suggesting this tech stack and providing a lot of resources to learn from.
