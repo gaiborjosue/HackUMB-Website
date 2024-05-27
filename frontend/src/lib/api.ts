@@ -25,6 +25,7 @@ async function getRole() {
   return data
 }
 
+
 export const useQueryOptions = queryOptions({ queryKey: ['get-current-user'], queryFn: getCurrentUser, staleTime: Infinity})
 
 export const useRoleQueryOptions = queryOptions({ queryKey: ['get-role'], queryFn: getRole, staleTime: Infinity})

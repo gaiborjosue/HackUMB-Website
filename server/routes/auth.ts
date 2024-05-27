@@ -14,12 +14,21 @@ export const authRoute = new Hono()
 
   .get("/register", async (c) => {
     const registerUrl = await kindeClient.register(sessionManager(c));
-    return c.redirect(registerUrl.toString());
+    sessionManager(c).setSessionItem('isRegistering', true);
+    return c.redirect(registerUrl.toString())
   })
   .get("/callback", async (c) => {
     // get called every time we login or register
     const url = new URL(c.req.url);
     await kindeClient.handleRedirectToApp(sessionManager(c), url);
+
+    const isRegistering = await sessionManager(c).getSessionItem('isRegistering');
+
+    if (isRegistering) {
+      await sessionManager(c).removeSessionItem('isRegistering');
+      return c.redirect("/registration");
+    }
+    
     return c.redirect("/dashboard");
   })
   .get("/logout", async (c) => {

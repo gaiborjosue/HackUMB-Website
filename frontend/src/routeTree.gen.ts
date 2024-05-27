@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as AuthenticatedImport } from './routes/_authenticated'
 import { Route as IndexImport } from './routes/index'
+import { Route as AuthenticatedRegistrationImport } from './routes/_authenticated/registration'
 import { Route as AuthenticatedExpensesImport } from './routes/_authenticated/expenses'
 import { Route as AuthenticatedDashboardImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedCreateExpenseImport } from './routes/_authenticated/create-expense'
@@ -29,6 +30,11 @@ const AuthenticatedRoute = AuthenticatedImport.update({
 const IndexRoute = IndexImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
+} as any)
+
+const AuthenticatedRegistrationRoute = AuthenticatedRegistrationImport.update({
+  path: '/registration',
+  getParentRoute: () => AuthenticatedRoute,
 } as any)
 
 const AuthenticatedExpensesRoute = AuthenticatedExpensesImport.update({
@@ -113,6 +119,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedExpensesImport
       parentRoute: typeof AuthenticatedImport
     }
+    '/_authenticated/registration': {
+      id: '/_authenticated/registration'
+      path: '/registration'
+      fullPath: '/registration'
+      preLoaderRoute: typeof AuthenticatedRegistrationImport
+      parentRoute: typeof AuthenticatedImport
+    }
   }
 }
 
@@ -126,6 +139,7 @@ export const routeTree = rootRoute.addChildren({
     AuthenticatedCreateExpenseRoute,
     AuthenticatedDashboardRoute,
     AuthenticatedExpensesRoute,
+    AuthenticatedRegistrationRoute,
   }),
 })
 
