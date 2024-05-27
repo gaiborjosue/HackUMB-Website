@@ -23,6 +23,7 @@ export const announcementsRoute = new Hono()
   .get("/", getUser, async (c) => {
 
     const announcements = await db.select().from(announcementTable).orderBy(desc(announcementTable.createdAt)).limit(100)
+
     return c.json({ announcements: announcements});
   })
   .post("/", getStaff, zValidator("json", createPostSchema), async (c) => {
@@ -58,7 +59,6 @@ export const announcementsRoute = new Hono()
   
   .delete("/:id{[0-9]+}", getStaff, async (c) => {
     const id = Number.parseInt(c.req.param('id'))
-    const user = c.var.user
 
     const announcement = await db.delete(announcementTable).where(eq(announcementTable.id, id)).returning().then(res => res[0])
 
