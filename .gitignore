@@ -182,3 +182,6 @@ server/routes/expenses.ts
 server/db/schema/expenses.ts
 frontend/src/routes/_authenticated/create-expense.tsx
 frontend/src/routes/_authenticated/expenses.tsx
+
+# Why did I forget to add .vscode to the gitignore?
+.vscode
