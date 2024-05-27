@@ -1,0 +1,1 @@
+CREATE INDEX IF NOT EXISTS "announcement_idx" ON "announcements" ("user_id");
