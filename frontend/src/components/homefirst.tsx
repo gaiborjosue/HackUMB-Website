@@ -3,6 +3,8 @@ import { CarouselItem, CarouselContent, CarouselPrevious, CarouselNext, Carousel
 import { Skeleton } from "@/components/ui/skeleton"
 import { Button } from "@/components/ui/button"
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar"
+import { SVGProps } from "react"
+import { JSX } from "react/jsx-runtime"
 
 export function homefirst() {
   return (
@@ -38,13 +40,13 @@ export function homefirst() {
             <CarouselItem>
               <img
                 alt="Carousel Image 1"
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full vertical-center"
                 height={1080}
                 src="https://raw.githubusercontent.com/UMB-CS-Club/hack2.0/main/HackathonPhotos/IMG_6320.jpg"
                 style={{
                   aspectRatio: "1920/1080",
                   objectFit: "cover",
-                  filter: "grayscale(100%)"
+                  filter: "grayscale(100%)",
                 }}
                 width={1920}
               />
@@ -52,7 +54,7 @@ export function homefirst() {
             <CarouselItem>
               <img
                 alt="Carousel Image 2"
-                className="object-cover w-full h-full"
+                className="object-cover object-bottom w-full h-full"
                 height={1080}
                 src="https://raw.githubusercontent.com/UMB-CS-Club/hack2.0/main/HackathonPhotos/IMG_6180.jpg"
                 style={{
@@ -66,8 +68,8 @@ export function homefirst() {
             <CarouselItem>
               <img
                 alt="Carousel Image 3"
-                className="object-cover w-full h-full"
-                height={1080}
+                className="object-cover object-bottom w-full h-full"
+                height={2000}
                 src="https://raw.githubusercontent.com/UMB-CS-Club/hack2.0/main/HackathonPhotos/IMG_6208.jpg"
                 style={{
                   aspectRatio: "1920/1080",
@@ -80,7 +82,7 @@ export function homefirst() {
             <CarouselItem>
               <img
                 alt="Carousel Image 4"
-                className="object-cover w-full h-full"
+                className="object-cover object-bottom  w-full h-full"
                 height={1080}
                 src="https://raw.githubusercontent.com/UMB-CS-Club/hack2.0/main/HackathonPhotos/IMG_6233.jpg"
                 style={{
@@ -94,7 +96,7 @@ export function homefirst() {
             <CarouselItem>
               <img
                 alt="Carousel Image 5"
-                className="object-cover w-full h-full"
+                className="object-cover object-bottom w-full h-full"
                 height={1080}
                 src="https://raw.githubusercontent.com/UMB-CS-Club/hack2.0/main/HackathonPhotos/IMG_6236.jpg"
                 style={{
@@ -108,7 +110,7 @@ export function homefirst() {
             <CarouselItem>
               <img
                 alt="Carousel Image 6"
-                className="object-cover w-full h-full"
+                className="object-cover object-bottom w-full h-full"
                 height={1080}
                 src="https://raw.githubusercontent.com/UMB-CS-Club/hack2.0/main/HackathonPhotos/IMG_6238.jpg"
                 style={{
@@ -122,7 +124,7 @@ export function homefirst() {
             <CarouselItem>
               <img
                 alt="Carousel Image 7"
-                className="object-cover w-full h-full"
+                className="object-cover object-bottom w-full h-full"
                 height={1080}
                 src="https://raw.githubusercontent.com/UMB-CS-Club/hack2.0/main/HackathonPhotos/IMG_6346.jpg"
                 style={{
@@ -136,7 +138,7 @@ export function homefirst() {
             <CarouselItem>
               <img
                 alt="Carousel Image 8"
-                className="object-cover w-full h-full"
+                className="object-cover object-bottom w-full h-full"
                 height={1080}
                 src="https://raw.githubusercontent.com/UMB-CS-Club/hack2.0/main/HackathonPhotos/IMG_6347.jpg"
                 style={{
@@ -150,7 +152,7 @@ export function homefirst() {
             <CarouselItem>
               <img
                 alt="Carousel Image 9"
-                className="object-cover w-full h-full"
+                className="object-cover object-center w-full h-full"
                 height={1080}
                 src="https://raw.githubusercontent.com/UMB-CS-Club/hack2.0/main/HackathonPhotos/IMG_8285.jpg"
                 style={{
@@ -164,7 +166,7 @@ export function homefirst() {
             <CarouselItem>
               <img
                 alt="Carousel Image 10"
-                className="object-cover w-full h-full"
+                className="object-cover object-bottom w-full h-full"
                 height={1080}
                 src="https://raw.githubusercontent.com/UMB-CS-Club/hack2.0/main/HackathonPhotos/06.png"
                 style={{
@@ -178,7 +180,7 @@ export function homefirst() {
             <CarouselItem>
               <img
                 alt="Carousel Image 11"
-                className="object-cover w-full h-full"
+                className="object-cover object-center w-full h-full"
                 height={1080}
                 src="https://raw.githubusercontent.com/UMB-CS-Club/hack2.0/main/HackathonPhotos/IMG_8318.jpg"
                 style={{
@@ -192,7 +194,7 @@ export function homefirst() {
             <CarouselItem>
               <img
                 alt="Carousel Image 12"
-                className="object-cover w-full h-full"
+                className="object-cover object-bottom w-full h-full"
                 height={1080}
                 src="https://github.com/UMB-CS-Club/hack2.0/blob/main/HackathonPhotos/image.png?raw=true"
                 style={{
@@ -398,12 +400,12 @@ export function homefirst() {
             <CarouselItem>
               <img
                 alt="Carousel Image 2"
-                className="object-cover w-full h-full"
+                className="object-contain object-bottom w-full h-full"
                 height={1080}
                 src="https://github.com/UMB-CS-Club/hack2.0/blob/main/First_Hackathon/DSC02412.jpg?raw=true"
                 style={{
                   aspectRatio: "1920/1080",
-                  objectFit: "cover",
+                  objectFit: "contain",
                   filter: "grayscale(100%)"
                 }}
                 width={1920}
@@ -510,7 +512,7 @@ export function homefirst() {
             <CarouselItem>
               <img
                 alt="Carousel Image 10"
-                className="object-cover w-full h-full"
+                className="object-cover object-bottom w-full h-full"
                 height={1080}
                 src="https://github.com/UMB-CS-Club/hack2.0/blob/main/First_Hackathon/DSC02589.jpg?raw=true"
                 style={{
@@ -524,7 +526,7 @@ export function homefirst() {
             <CarouselItem>
               <img
                 alt="Carousel Image 11"
-                className="object-cover w-full h-full"
+                className="object-cover object-bottom w-full h-full"
                 height={1080}
                 src="https://github.com/UMB-CS-Club/hack2.0/blob/main/First_Hackathon/DSC02622.jpg?raw=true"
                 style={{
@@ -538,7 +540,7 @@ export function homefirst() {
             <CarouselItem>
               <img
                 alt="Carousel Image 12"
-                className="object-cover w-full h-full"
+                className="object-cover object-bottom w-full h-full"
                 height={1080}
                 src="https://github.com/UMB-CS-Club/hack2.0/blob/main/First_Hackathon/DSC02667.jpg?raw=true"
                 style={{
@@ -556,7 +558,7 @@ export function homefirst() {
       </div>
 
       <section className="flex h-screen w-full items-center justify-center bg-gray-100 dark:bg-black px-7">
-        <div className="container grid grid-cols-1 gap-10 px-4 md:grid-cols-2 md:gap-16">
+        <div className="container grid grid-cols-1 gap-10 px-4 md:grid-cols-2 md:gap-16 max-w-6xl px-4 py-16 mx-auto">
           <div className="space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Vision</h2>
             <p className="max-w-[500px] text-gray-500 dark:text-gray-400">
@@ -572,7 +574,6 @@ export function homefirst() {
         </div>
       </section>
 
-
       <section className="flex flex-col w-full h-screen bg-black dark:bg-black px-7">
         <div className="container max-w-6xl px-4 py-16 mx-auto">
           <div className="space-y-6 text-left">
@@ -585,6 +586,7 @@ export function homefirst() {
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-12">
             <div className="flex items-center justify-center">
+              <a href="https://www.qrpigeon.pics" target="_blank">
               <img
                 alt="Sponsor 1"
                 className="w-full h-auto transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
@@ -595,7 +597,7 @@ export function homefirst() {
                   objectFit: "cover",
                 }}
                 width={120}
-              />
+              /></a>
             </div>
             <div className="flex items-center justify-center">
               <img
@@ -626,6 +628,7 @@ export function homefirst() {
               />
             </div>
             <div className="flex items-center justify-center">
+            <a href="https://www.umb.edu" target="_blank">
               <img
                 alt="Sponsor 4"
                 className="w-full h-auto transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
@@ -637,9 +640,10 @@ export function homefirst() {
                   filter: "grayscale(100%)"
                 }}
                 width={120}
-              />
+              /></a>
             </div>
             <div className="flex items-center justify-center">
+            <a href="https://www.bvs.net" target="_blank">
               <img
                 alt="Sponsor 5"
                 className="w-full h-auto transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
@@ -651,7 +655,7 @@ export function homefirst() {
                   filter: "grayscale(100%)"
                 }}
                 width={120}
-              />
+              /></a>
             </div>
           </div>
         </div>
@@ -670,7 +674,47 @@ export function homefirst() {
         </div>
       </section>
 
+      <footer className="bg-gray-100 p-6 md:py-12 w-full dark:bg-gray-800">
+        <div className="container max-w-7xl flex flex-col items-center justify-between gap-4 md:flex-row">
+          <p className="text-sm text-gray-500 dark:text-gray-400">© 2024 HackUMB Inc. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <a
+              className="inline-flex items-center gap-2 text-sm font-medium text-gray-900 hover:underline dark:text-gray-50"
+              href="https://github.com/gaiborjosue/HackUMB-Website"
+              target="_blank"
+            >
+              <GithubIcon className="h-5 w-5" />
+              View Source
+            </a>
+            <div className="text-sm text-gray-500 dark:text-gray-400">
+              Designed and developed by{" "}
+              <a className="font-medium text-gray-900 hover:underline dark:text-gray-50" href="https://edwardgaibor.me" target="_blank">
+                 Edward Gaibor
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
+  )
+}
 
+function GithubIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+      <path d="M9 18c-4.51 2-5-2-7-2" />
+    </svg>
   )
 }

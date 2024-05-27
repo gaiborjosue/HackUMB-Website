@@ -1,4 +1,4 @@
-import { pgTable, text, serial, index, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, index, timestamp, boolean } from "drizzle-orm/pg-core";
 
 export const registrations = pgTable(
   "registrations", {
@@ -8,6 +8,7 @@ export const registrations = pgTable(
     semester: text("semester").notNull(),
     team: text("team").notNull(),
     createdAt: timestamp("created_at").defaultNow(),
+    checkedin: boolean("checkedin").default(false).notNull()
   },
   (registrations) => {
     return {

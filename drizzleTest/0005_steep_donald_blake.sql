@@ -1,0 +1,1 @@
+ALTER TABLE "registrations" ADD COLUMN "checkedin" boolean DEFAULT false NOT NULL;

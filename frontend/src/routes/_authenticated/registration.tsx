@@ -9,16 +9,18 @@ import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@
 import { Button } from "@/components/ui/button";
 import { api } from '@/lib/api';
 import { toast } from 'sonner';
+import { check } from 'drizzle-orm/mysql-core';
 
 // Define the form schema using zod
 const formSchema = z.object({
   track: z.enum(["Undergrad", "Grad"], {
     required_error: "Please select an academic track.",
   }),
-  semester: z.enum(["fall-2024", "spring-2025", "summer-2025"], {
+  semester: z.enum(["fall-2024"], {
     required_error: "Please select a semester.",
   }),
   team: z.enum(["team", "no-team"]),
+  checkedin: z.boolean().default(false)
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -37,13 +39,14 @@ export default function Registration() {
       track: "Undergrad",
       semester: "fall-2024",
       team: "no-team",
+      checkedin: false
     },
   });
 
   // Define the form submission handler
   const onSubmit = async (values: FormData) => {
     try {
-      const res = await api.registration.$post({ json: values });
+      const res = await api.registration.$post( { json:values });
       if (!res.ok) {
         throw new Error("Failed to complete registration");
       }

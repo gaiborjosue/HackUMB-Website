@@ -43,6 +43,7 @@ function NavBar() {
       </nav>
       
     </header>
+    
   )
 }
 

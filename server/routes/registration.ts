@@ -10,10 +10,12 @@ import { eq, desc } from "drizzle-orm";
 const registrationSchema = z.object({
   track: z.enum(["Undergrad", "Grad"]),
   semester: z.string().min(1),
-  team: z.enum(["team", "no-team"]),
+  team: z.enum(["team", "no-team"])
 })
 
 type Registration = z.infer<typeof registrationSchema>
+
+const createPostSchema = registrationSchema.omit({ id: true });
 
 export const registrationRoute = new Hono()
   .post("/", getUser, zValidator("json", registrationSchema), async (c) => {
@@ -23,6 +25,7 @@ export const registrationRoute = new Hono()
     const result = await db.insert(registrationTable).values({
       ...registration,
       userId: user.id,
+      checkedin: false
     }).returning()
 
     c.status(201)
