@@ -130,3 +130,6 @@ For questions or support, please contact the project maintainers at [edward.gaib
 ## Credits
 
 I did this project to experiment with new technologies and learn how to build a full stack application. Thus, I strongly give credit to [Sam Meech-Ward](https://www.youtube.com/@SamMeechWard) for suggesting this tech stack and providing a lot of resources to learn from.
+
+![websitetechstack](https://github.com/gaiborjosue/HackUMB-Website/assets/78832141/d281ed47-a1d5-4989-a0d0-af3a975fd31c)
+
