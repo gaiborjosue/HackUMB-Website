@@ -1,3 +1,5 @@
+![MainHackUMBRepo](https://github.com/gaiborjosue/HackUMB-Website/assets/78832141/0eded941-df41-4ac6-b998-ec65931fcf0b)
+
 # FullStack App: Hack UMB - Hackathon Website
 
 Welcome to the Hack UMB project! This repository contains the code for our hackathon website :) This will improve the workflow for staff and allow us to have a cutom way of sharing information with registered participants.
