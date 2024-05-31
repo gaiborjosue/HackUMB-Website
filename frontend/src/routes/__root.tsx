@@ -16,8 +16,8 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 function NavBar() {
 
   return (
-    <header className="flex h-16 w-full items-center justify-between px-4 md:px-6">
-      <nav className="hidden flex-1 justify-center md:flex">
+    <header className="flex h-16 w-full items-center justify-between px-7 md:px-6">
+      <nav className="flex-1 justify-center md:flex">
         <ul className="flex items-center gap-6 text-sm font-medium">
           <li>
             <Link className="[&.active]:font-bold hover:underline hover:underline-offset-4" to="/">
