@@ -15,7 +15,7 @@ const registrationSchema = z.object({
 
 type Registration = z.infer<typeof registrationSchema>
 
-const createPostSchema = registrationSchema.omit({ id: true });
+// const createPostSchema = registrationSchema.omit({ id: true });
 
 export const registrationRoute = new Hono()
   .post("/", getUser, zValidator("json", registrationSchema), async (c) => {
