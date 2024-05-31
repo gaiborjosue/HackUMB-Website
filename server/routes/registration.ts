@@ -38,3 +38,10 @@ export const registrationRoute = new Hono()
 
     return c.json({ registration: result });
   })
+  .post("/checkin", async (c) => {
+    const userIdR = c.req.query("userId")
+
+    const result = await db.update(registrationTable).set({ checkedin: true }).where(eq(registrationTable.userId, userIdR)).returning()
+
+    return c.json({ registration: result });
+  })
