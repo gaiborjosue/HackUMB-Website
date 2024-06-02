@@ -6,9 +6,12 @@ import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar"
 import { SVGProps } from "react"
 import { JSX } from "react/jsx-runtime"
 
+
 export function homefirst() {
+
   return (
-    <div className="relative overflow-hidden">
+    
+    <div className="relative overflow-hidden" id="smooth-wrapper">
       <section className="h-screen w-full py-12 md:py-24 lg:py-32 px-5">
         <div className="container px-5">
           <div className="flex flex-col items-start space-y-4">
