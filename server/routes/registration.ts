@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { z } from "zod";
 import { zValidator } from '@hono/zod-validator'
-import { getUser } from "../kinde";
+import { getUser, getStaff } from "../kinde";
 
 import { db } from "../db"
 import { registrations as registrationTable } from "../db/schema/registrations"
@@ -38,7 +38,7 @@ export const registrationRoute = new Hono()
 
     return c.json({ registration: result });
   })
-  .post("/checkin", async (c) => {
+  .post("/checkin", getStaff, async (c) => {
     const userIdR = c.req.query("userId")
 
     const result = await db.update(registrationTable).set({ checkedin: true }).where(eq(registrationTable.userId, userIdR)).returning()
