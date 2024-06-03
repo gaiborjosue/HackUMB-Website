@@ -46,6 +46,14 @@ function Dashboard() {
           {role === "straff-perm" && (
             <CreateAnnouncementDrawer />
           )}
+          <a href="https://discord.gg/yNhZDfR5yk">
+          <Button
+            className="text-sm text-[#fff] bg-[#6b5b95] hover:bg-[#8673b0] transition-colors px-4 py-2"
+            variant="secondary"
+          >
+            Join Discord
+          </Button>
+        </a>
         </div>
         <a href="/api/logout">
           <Button
@@ -64,14 +72,6 @@ function Dashboard() {
         </Link>
         <Button className="text-4xl font-bold uppercase bg-white text-[#999] hover:bg-[#222] hover:text-[#ccc] transition-colors h-full">
           Live Stream
-        </Button>
-      </div>
-      <div className="mt-8">
-        <Button
-          className="block mx-auto text-sm text-[#ccc] bg-[#6b5b95] hover:bg-[#8673b0] transition-colors"
-          variant="secondary"
-        >
-          Discord
         </Button>
       </div>
     </div>
@@ -121,7 +121,7 @@ function CreateAnnouncementDrawer() {
   })
 
   return (
-    <Drawer defaultOpen>
+    <Drawer>
       <DrawerTrigger asChild>
         <Button>Create Announcement</Button>
       </DrawerTrigger>

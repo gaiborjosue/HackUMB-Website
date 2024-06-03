@@ -185,3 +185,5 @@ frontend/src/routes/_authenticated/expenses.tsx
 
 # Why did I forget to add .vscode to the gitignore?
 .vscode
+
+*.mjs

@@ -21,6 +21,8 @@ import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 import { useQuery } from "@tanstack/react-query";
 import { useQueryOptions } from '@/lib/api';
 import { Link } from '@tanstack/react-router';
+import BadgeTemplate from '@/components/BadgeTemplate';
+import { Helmet } from 'react-helmet'
 
 export const Route = createFileRoute('/_authenticated/badge')({
   component: Badge,
@@ -39,54 +41,61 @@ export default function Badge(): JSX.Element {
   const lastName = data?.user?.family_name || "Guest";
   const firstName = data?.user?.given_name || "Guest";
 
+  const userId = data?.user?.id || "0";
+  const templateSrc = "https://raw.githubusercontent.com/UMB-CS-Club/hack2.0/main/HackathonPhotos/HACKUMB_BADGE.png";
+
   return (
-    <div className="h-screen flex flex-col items-center justify-center bg-black text-white pt-16">
-      <Link to="/dashboard">
-      </Link>
-      <div className="text-center mb-8">
-        <h1 className="text-5xl font-bold mb-4">See you soon!</h1>
-        <p className="text-xl">Join our Discord server for more details</p>
+    <>
+      <div className="h-screen flex flex-col items-center justify-center bg-black text-white pt-16">
+        <Link to="/dashboard">
+        </Link>
+        <div className="text-center mb-8">
+          <h1 className="text-5xl font-bold mb-4">See you soon!</h1>
+          <p className="text-xl">Join our Discord server for more details</p>
+        </div>
+        <div className="relative" style={{ width: '100%', height: '800px' }}>
+          <Canvas camera={{ position: [0, 0, 10], fov: 25 }}>
+            <ambientLight intensity={Math.PI} />
+            <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
+              <Band firstName={firstName} lastName={lastName} />
+            </Physics>
+            <Environment background blur={0.75}>
+              <color attach="background" args={["black"]} />
+              <Lightformer
+                intensity={2}
+                color="white"
+                position={[0, -1, 5]}
+                rotation={[0, 0, Math.PI / 3]}
+                scale={[100, 0.1, 1]}
+              />
+              <Lightformer
+                intensity={3}
+                color="white"
+                position={[-1, -1, 1]}
+                rotation={[0, 0, Math.PI / 3]}
+                scale={[100, 0.1, 1]}
+              />
+              <Lightformer
+                intensity={3}
+                color="white"
+                position={[1, 1, 1]}
+                rotation={[0, 0, Math.PI / 3]}
+                scale={[100, 0.1, 1]}
+              />
+              <Lightformer
+                intensity={10}
+                color="white"
+                position={[-10, 0, 14]}
+                rotation={[0, Math.PI / 2, Math.PI / 3]}
+                scale={[100, 10, 1]}
+              />
+            </Environment>
+
+          </Canvas>
+          <BadgeTemplate userId={userId} userName={firstName + " " + lastName} templateSrc={templateSrc} />
+        </div>
       </div>
-      <div className="relative" style={{ width: '100%', height: '800px' }}>
-        <Canvas camera={{ position: [0, 0, 10], fov: 25 }}>
-          <ambientLight intensity={Math.PI} />
-          <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
-            <Band firstName={firstName} lastName={lastName} />
-          </Physics>
-          <Environment background blur={0.75}>
-            <color attach="background" args={["black"]} />
-            <Lightformer
-              intensity={2}
-              color="white"
-              position={[0, -1, 5]}
-              rotation={[0, 0, Math.PI / 3]}
-              scale={[100, 0.1, 1]}
-            />
-            <Lightformer
-              intensity={3}
-              color="white"
-              position={[-1, -1, 1]}
-              rotation={[0, 0, Math.PI / 3]}
-              scale={[100, 0.1, 1]}
-            />
-            <Lightformer
-              intensity={3}
-              color="white"
-              position={[1, 1, 1]}
-              rotation={[0, 0, Math.PI / 3]}
-              scale={[100, 0.1, 1]}
-            />
-            <Lightformer
-              intensity={10}
-              color="white"
-              position={[-10, 0, 14]}
-              rotation={[0, Math.PI / 2, Math.PI / 3]}
-              scale={[100, 10, 1]}
-            />
-          </Environment>
-        </Canvas>
-      </div>
-    </div>
+    </>
   );
 }
 
