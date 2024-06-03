@@ -48,6 +48,7 @@ KINDE_CLIENT_ID=your_kinde_client_id
 KINDE_CLIENT_SECRET=your_kinde_client_secret
 KINDE_REDIRECT_URI=your_redirect_uri
 KINDE_LOGOUT_REDIRECT_URI=your_logout_redirect_uri
+DISCORD_WEBHOOK_URL=your_discord_webhook_url
 ```
 
 ### Install Bun
