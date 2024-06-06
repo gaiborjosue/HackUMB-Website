@@ -41,14 +41,14 @@ function Dashboard() {
               }}
               width={40}
             />
-            <span className="text-white font-medium pl-5">My Profile</span>
+            <span className="hidden md:block text-white font-medium pl-5">My Profile</span>
           </Link>
           {role === "straff-perm" && (
             <CreateAnnouncementDrawer />
           )}
           <a href="https://discord.gg/yNhZDfR5yk">
           <Button
-            className="text-sm text-[#fff] bg-[#6b5b95] hover:bg-[#8673b0] transition-colors px-4 py-2"
+            className="hidden md:block text-sm text-[#fff] bg-[#6b5b95] hover:bg-[#8673b0] transition-colors px-4 py-2"
             variant="secondary"
           >
             Join Discord

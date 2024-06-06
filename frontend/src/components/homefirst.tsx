@@ -34,6 +34,7 @@ export function homefirst() {
             single day and build a meaningful project that would help improve our community. We strongly encourage you
             to exploit your creativity 🔥
           </p>
+          <Button asChild className="mt-6"><a href="https://github.com/UMB-CS-Club/bostonbridge/issues" target="_blank">View past project submissions</a></Button>
         </div>
       </section>
 
