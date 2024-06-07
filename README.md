@@ -4,7 +4,7 @@
 
 Welcome to the Hack UMB project! This repository contains the code for our hackathon website. :) This will improve staff workflow and allow us to share information with registered participants in a custom way.
 
-Access the live website [here](https://hackathon-website.fly.dev).
+Access the live website [here](https://hackumb.tech).
 
 ## Features
 
