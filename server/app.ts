@@ -3,6 +3,7 @@ import { logger } from 'hono/logger'
 import { announcementsRoute } from './routes/announcements'
 import { serveStatic } from 'hono/bun'
 import { authRoute } from './routes/auth'
+import { badgeCheckinRoute } from './routes/badgeCheckin'
 import { registrationRoute } from './routes/registration'
 
 const app = new Hono()
@@ -12,6 +13,7 @@ app.use('*', logger())
 const apiRoutes = app.basePath("/api")
   .route("/announcements", announcementsRoute)
   .route("/registration", registrationRoute)
+  .route("/badge-checkin", badgeCheckinRoute)
   .route("/", authRoute);
 
 app.get('*', serveStatic({ root: './frontend/dist' }))
